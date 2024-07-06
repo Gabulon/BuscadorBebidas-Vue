@@ -1,9 +1,15 @@
 
 <script>
-import { RouterLink} from 'vue-router'
+import{computed} from 'vue'
+import { RouterLink,useRoute} from 'vue-router'
+
+const route = useRoute()
+const paginaincio =computed(() => route.name === 'inicio')
+
+console.log(route)
 </script>
 <template>
-   <header class="bg-slate-800">
+   <header class="bg-slate-800" :class="{header:paginaincio}">
         <div class="mx-auto container px-5 py-16">
             <div class="flex justify-between items-center">
                 <div>
@@ -21,7 +27,7 @@ import { RouterLink} from 'vue-router'
                 </nav>
 
             </div>
-            <form class="md:1/2 2x:w-1/3 bg-orange-400 my-32 p-10 rounded-lg shadow space-y-6">
+            <form class="md:1/2 2x:w-1/3 bg-orange-400 my-32 p-10 rounded-lg shadow space-y-6" v-if="paginaincio">
                 <div class="space-y-4">
                     <label class="block text-white uppercase font-extrabold text-lg" for="ingrediente">Nombre o Ingredientes</label>
                     <input id="ingrediente" type="text" class="p-3 w-full rounded-lg focus:outline-none" placeholder="Nombre o ingrediente: ej Vodka, Teuila, etc">
@@ -37,3 +43,10 @@ import { RouterLink} from 'vue-router'
         </div>
    </header>
 </template>
+<style>
+.header {
+    background-image: url('/img/bg.jpg') ;
+    background-size: cover;
+    background-position: center;
+}
+</style>
