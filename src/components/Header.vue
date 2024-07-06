@@ -2,8 +2,12 @@
 <script>
 import{computed} from 'vue'
 import { RouterLink,useRoute} from 'vue-router'
+import { useBebidasStore } from '../stores/bebidas'
 
 const route = useRoute()
+
+const store= useBebidasStore()
+
 const paginaincio =computed(() => route.name === 'inicio')
 
 console.log(route)
