@@ -23,6 +23,10 @@ export default {
     };
   },
 };
+
+const handleSubmit = () =>{
+    store.obtenerRecetas();
+}
 </script>
 
 <template>
@@ -43,7 +47,7 @@ export default {
           </RouterLink>
         </nav>
       </div>
-      <form class="md:1/2 2x:w-1/3 bg-orange-400 my-32 p-10 rounded-lg shadow space-y-6" v-if="paginaincio">
+      <form v-if="paginaincio" class="md:1/2 2x:w-1/3 bg-orange-400 my-32 p-10 rounded-lg shadow space-y-6" @submit.prevent="handleSubmit">
         <div class="space-y-4">
           <label class="block text-white uppercase font-extrabold text-lg" for="ingrediente">Nombre o Ingredientes</label>
           <input id="ingrediente" type="text" class="p-3 w-full rounded-lg focus:outline-none" placeholder="Nombre o ingrediente: ej Vodka, Tequila, etc" v-model="store.busqueda.nombre" />
