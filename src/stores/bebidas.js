@@ -24,6 +24,7 @@ const recetas =ref([])
     categorias,
     fetchCategorias,
     busqueda,
-    obtenerRecetas
+    obtenerRecetas,
+    recetas
   };
 });
