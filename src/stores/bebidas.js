@@ -9,13 +9,16 @@ export const useBebidasStore = defineStore('bebidas', () => {
     categoria: ''
   })
 
+const recetas =ref([])
+
   const fetchCategorias = async () => {
     const { data: { drinks } } = await APIService.obtenerCategorias()
     categorias.value = drinks;
   };
 
-  function obtenerRecetas(){
-    console.log('consultando API..')
+   async function obtenerRecetas(){
+     const {data:{drinks}} = await APIService.buscarRecetas(busqueda)
+    recetas.value = drinks
   }
   return {
     categorias,
