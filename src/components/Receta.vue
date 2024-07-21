@@ -8,7 +8,7 @@
             type: Object
         }
     })
-    
+
 </script>
 <template>
     <div class="border shadow-lg">
@@ -31,5 +31,6 @@
             </button>
         </div>
     </div>
+    
 </template>
 
