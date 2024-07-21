@@ -1,30 +1,29 @@
-import { ref, reactive} from 'vue';
-import { defineStore } from 'pinia';
-import APIService from '../services/APIService';
+import { ref, reactive, onMounted, computed } from 'vue'
+import { defineStore } from 'pinia'
+import APIService from '../services/APIService'
 
 export const useBebidasStore = defineStore('bebidas', () => {
-  const categorias = ref([]);
   const busqueda = reactive({
-    nombre:' ',
+    nombre: '',
     categoria: ''
-  })
+})
 
 const recetas =ref([])
+const receta = ref({})
 
-  const fetchCategorias = async () => {
-    const { data: { drinks } } = await APIService.obtenerCategorias()
-    categorias.value = drinks;
-  };
-
-   async function obtenerRecetas(){
-     const {data:{drinks}} = await APIService.buscarRecetas(busqueda)
-    recetas.value = drinks
-  }
+onMounted(async function() {
+  const {data: {drinks}} = await APIService.obtenerCategorias()
+  categorias.value = drinks
+})
+async function obtenerRecetas() {
+  const {data: {drinks}} =  await APIService.buscarRecetas(busqueda)
+  recetas.value = drinks
+}
   return {
     categorias,
-    fetchCategorias,
     busqueda,
-    obtenerRecetas,
-    recetas
+    recetas,
+    receta,
+    obtenerRecetas
   };
 });
