@@ -22,16 +22,17 @@ const handleSubmit = () => {
         <div class="mx-auto container px-5 py-16">
 
             <div class="flex justify-between items-center">
-                
+
                 <div>
                     <RouterLink
                         :to="{name: 'inicio'}"
                     >
                         <img class="w-32" src="/img/logo.svg" alt="Logotipo" />
                     </RouterLink>
-                </div>
+                </div> 
 
                 <nav class="flex gap-4 text-white ">
+
                     <RouterLink
                         :to="{name: 'inicio'}"
                         class="uppercase font-bold"
