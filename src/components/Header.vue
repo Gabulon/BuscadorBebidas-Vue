@@ -20,8 +20,9 @@ const handleSubmit = () => {
         
     >
         <div class="mx-auto container px-5 py-16">
-            
+
             <div class="flex justify-between items-center">
+                
                 <div>
                     <RouterLink
                         :to="{name: 'inicio'}"
