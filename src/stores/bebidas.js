@@ -22,6 +22,7 @@ onMounted(async function() {
 async function obtenerRecetas() {
 
   const {data: {drinks}} =  await APIService.buscarRecetas(busqueda)
+  
   recetas.value = drinks
   
 }
