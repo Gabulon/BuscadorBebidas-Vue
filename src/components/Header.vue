@@ -59,8 +59,9 @@ const handleSubmit = () => {
             >
                 <div class="space-y-4">
                     <label
-                        class="block text-white uppercase font-extrabold text-lg"
+                        class="block text-white uppercase font-extrabold text-lg" 
                         for="ingrediente">Nombre o Ingredientes</label>
+                        
                     <input 
                         id="ingrediente"
                         type="text"
