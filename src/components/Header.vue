@@ -73,10 +73,11 @@ const handleSubmit = () => {
                 </div>
 
                 <div class="space-y-4">
-                    
+
                     <label
                         class="block text-white uppercase font-extrabold text-lg"
                         for="categoria">Categoría</label>
+
                     <select 
                         id="categoria"
                         class="p-3 w-full rounded-lg focus:outline-none"
@@ -92,6 +93,7 @@ const handleSubmit = () => {
                 </div>
                     
                 <input
+                
                     type="submit"
                     class="bg-orange-800 hover:bg-orange-900 cursor-pointer text-white font-extrabold w-full p-2 rounded-lg uppercase"
                     value="Buscar Recetas"
