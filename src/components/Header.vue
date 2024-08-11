@@ -80,6 +80,7 @@ const handleSubmit = () => {
 
                     <select 
                         id="categoria"
+                        
                         class="p-3 w-full rounded-lg focus:outline-none"
                         v-model="store.busqueda.categoria"
                     >
