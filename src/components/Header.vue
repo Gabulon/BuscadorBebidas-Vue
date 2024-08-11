@@ -83,7 +83,8 @@ const handleSubmit = () => {
                         class="p-3 w-full rounded-lg focus:outline-none"
                         v-model="store.busqueda.categoria"
                     >
-                        <option value="">-- Seleccione -- </option>
+                        <option value=""> -- Seleccione -- </option>
+
                         <option
                             v-for="categoria in store.categorias"
                             :key="categoria.strCategory"
